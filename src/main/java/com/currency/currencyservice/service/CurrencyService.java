@@ -1,6 +1,8 @@
 package com.currency.currencyservice.service;
 
+import com.currency.currencyservice.model.CurrencyResponse;
+
 public interface CurrencyService {
 
-    Double getCurrencyValueByCurrencyCode(String code);
+    CurrencyResponse getCurrencyValueByCurrencyCode(String code);
 }

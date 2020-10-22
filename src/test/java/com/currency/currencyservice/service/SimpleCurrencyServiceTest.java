@@ -1,5 +1,6 @@
 package com.currency.currencyservice.service;
 
+import com.currency.currencyservice.model.CurrencyResponse;
 import com.currency.currencyservice.service.exception.CurrencyNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -17,9 +18,9 @@ class SimpleCurrencyServiceTest {
         String givenCurrencyCode = "EUR";
         Double expectedCurrencyValue = 4.55;
 
-        Double actualCurrencyValue = simpleCurrencyService.getCurrencyValueByCurrencyCode(givenCurrencyCode);
+        CurrencyResponse response = simpleCurrencyService.getCurrencyValueByCurrencyCode(givenCurrencyCode);
 
-        assertEquals(expectedCurrencyValue, actualCurrencyValue);
+        assertEquals(expectedCurrencyValue, response.getCurrencyValue());
     }
 
     @ParameterizedTest

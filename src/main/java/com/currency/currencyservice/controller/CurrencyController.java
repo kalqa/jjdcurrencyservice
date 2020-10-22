@@ -1,5 +1,6 @@
 package com.currency.currencyservice.controller;
 
+import com.currency.currencyservice.model.CurrencyResponse;
 import com.currency.currencyservice.service.CurrencyService;
 import com.currency.currencyservice.service.exception.CurrencyNotFoundException;
 import org.slf4j.Logger;
@@ -27,7 +28,7 @@ public class CurrencyController {
 
     @GetMapping("/{code}")
     @ResponseBody
-    public Double getCurrencyValue(@PathVariable String code) {
+    public CurrencyResponse getCurrencyValue(@PathVariable String code) {
         return currencyService.getCurrencyValueByCurrencyCode(code);
     }
 

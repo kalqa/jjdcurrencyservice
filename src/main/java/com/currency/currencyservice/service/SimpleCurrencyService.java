@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import com.currency.currencyservice.model.CurrencyResponse;
 import com.currency.currencyservice.service.exception.CurrencyNotFoundException;
 
 public class SimpleCurrencyService implements CurrencyService {
@@ -16,10 +17,11 @@ public class SimpleCurrencyService implements CurrencyService {
     }
 
     @Override
-    public Double getCurrencyValueByCurrencyCode(String code) {
+    public CurrencyResponse getCurrencyValueByCurrencyCode(String code) {
         String currencyCode = findCurrencyCodeInCurrencies(code)
                 .orElseThrow(() -> new CurrencyNotFoundException(code));
-        return currencies.get(currencyCode);
+        Double currencyValue = currencies.get(currencyCode);
+        return new CurrencyResponse(currencyValue);
     }
 
     private Optional<String> findCurrencyCodeInCurrencies(String code) {
