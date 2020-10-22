@@ -9,9 +9,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class SimpleCurrencyServiceTest {
+class CurrencyServiceSimpleImplTest {
 
-    final CurrencyService simpleCurrencyService = new SimpleCurrencyService();
+    final CurrencyService simpleCurrencyService = new CurrencyServiceSimpleImpl();
 
     @Test
     void should_return_correct_currency_value_when_eur_code_given() {
