@@ -25,7 +25,7 @@ class CurrencyControllerTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"xaz", "USD", "ADASDcc"})
+    @ValueSource(strings = {"xaz", "CHF", "ADASDcc"})
     public void should_return_client_bad_request_when_wrong_path_as_currency_code_given(String currency) throws Exception {
         mockMvc.perform(get("/currency/" + currency))
                 .andDo(print())

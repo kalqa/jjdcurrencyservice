@@ -14,6 +14,8 @@ public class CurrencyServiceSimpleImpl implements CurrencyService {
 
     public CurrencyServiceSimpleImpl() {
         currencies.put("EUR", 4.55);
+        currencies.put("USD", 5.55);
+        currencies.put("PLN", 3.55);
     }
 
     @Override
